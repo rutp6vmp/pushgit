@@ -7,7 +7,7 @@ pip install django-filter
 python -m pip install Pillow
 
 python manage.py migrate
-python manage.py superuser
+
 
 
 
