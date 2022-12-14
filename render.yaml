@@ -3,18 +3,12 @@ databases:
     databaseName: NoteShareSystem
     user: NoteShareSystem
 
-
-
 services:
   - type: web
     name: NoteShareSystem
     env: python
-    region: singapore
-    plan: free
-    branch: main
-    healthCheckPath: /
     buildCommand: "./build.sh"
-    startCommand: "gunicorn NoteShareSystem.wsgi:application"
+    startCommand: "gunicorn project.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -24,4 +18,3 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
-      autoDeploy: true
