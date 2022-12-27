@@ -32,6 +32,8 @@ class ProductModel(models.Model):
     enabled = models.BooleanField("啟用狀態", default=True)
     pcreatepeople_email = models.CharField('新增者郵箱',blank=False, max_length = 30, null = False, default=0)
 
+
+
     def __str__(self):
         return self.pname
 
